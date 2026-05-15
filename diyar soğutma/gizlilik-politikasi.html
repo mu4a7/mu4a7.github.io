@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Batman Diyar Teknik Beyaz Eşya gizlilik politikası. Kişisel verilerin korunması, çerez kullanımı ve veri işleme politikamız hakkında bilgi alın.">
+    <meta name="keywords" content="Batman gizlilik politikası, KVKK, kişisel veri koruma, çerez politikası, Batman teknik servis gizlilik, Diyarbakır gizlilik politikası">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:title" content="Gizlilik Politikası | Batman Diyar Teknik Beyaz Eşya">
+    <meta property="og:description" content="Batman Diyar Teknik Beyaz Eşya gizlilik politikası ve kişisel verilerin korunması">
+    <title>Gizlilik Politikası | Batman Diyar Teknik Beyaz Eşya</title>
+    <link rel="canonical" href="https://diyarsogutma.com.tr/gizlilik-politikasi.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-content { padding-top: 100px; }
+        .page-hero { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: white; padding: 80px 0; text-align: center; }
+        .page-hero h1 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 20px; color: white; }
+        .page-hero p { font-size: 1.25rem; font-weight: 500; opacity: 1; max-width: 700px; margin: 0 auto; background: rgba(255,255,255,0.2); padding: 18px 28px; border-radius: 12px; backdrop-filter: blur(8px); line-height: 1.7; color: white; border: 1px solid rgba(255,255,255,0.3); }
+        .content-section { padding: 60px 0; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%); }
+        .content-section h2 { font-size: 1.5rem; color: var(--gray-800); margin: 32px 0 16px; padding-bottom: 12px; border-bottom: 2px solid var(--primary); }
+        .content-section h3 { font-size: 1.2rem; color: var(--gray-700); margin: 24px 0 12px; }
+        .content-section p, .content-section li { color: var(--gray-600); line-height: 1.8; margin-bottom: 12px; }
+        .content-section ul { padding-left: 24px; margin-bottom: 20px; }
+        .content-section li { margin-bottom: 8px; }
+        .info-box { background: #eff6ff; border-left: 4px solid var(--primary); padding: 20px; margin: 20px 0; border-radius: 0 var(--radius) var(--radius) 0; }
+        .contact-box { background: #f0fdf4; border-left: 4px solid var(--secondary); padding: 20px; margin: 20px 0; border-radius: 0 var(--radius) var(--radius) 0; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Batman Diyar <span>Teknik Beyaz Eşya</span></span>
+            </a>
+            <nav class="nav" id="mainNav">
+                <a href="index.html" class="nav-link">Ana Sayfa</a>
+                <a href="servisler.html" class="nav-link">Servislerimiz</a>
+                <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="iletisim.html" class="nav-link">İletişim</a>
+            </nav>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menü"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <script>
+        function askQuestion(q) {
+            var m = document.getElementById('aiModal');
+            var msgs = document.getElementById('aiMessages');
+            var inp = document.getElementById('aiInput');
+            if(m) m.classList.add('active');
+            if(msgs && q) {
+                var um = document.createElement('div');
+                um.className = 'ai-message user';
+                um.innerHTML = '<p>' + q + '</p>';
+                msgs.appendChild(um);
+                msgs.scrollTop = msgs.scrollHeight;
+                setTimeout(function() {
+                    var responses = {
+                        'klima ısıtmıyor': 'Klima ısıtmıyorsa: 1) Termostat ayarını kontrol edin (ısıtma modunda olmalı), 2) Filtreler temiz olmalı, 3) Gaz basıncı normal olmalı. 0543 884 72 84 üzerinden randevu alabilirsiniz.',
+                        'klima soğutmuyor': 'Klima soğutmama sorunu: • Filtre tıkanıklığı en sık neden • Gaz eksikliği • Dış ünite yeterli havalanmıyor. Önce filtre temizliği yapın.',
+                        'kombi arızası': 'Kombi arızası için: E1-E8 arası hata kodları olabilir. En sık E1 (ateşleme) ve E4 (düşük basınç) görülür. 0543 884 72 84 arayabilirsiniz.',
+                        'kombi petek ısınmıyor': 'Petekler ısınmıyorsa: 1) Tüm vanalar açık mı? 2) Kombi basıncı 1-2 bar mı? 3) Peteklerde hava var mı?',
+                        'buzdolabı soğutmuyor': 'Buzdolabı soğutmuyor: • Termostat ayarı (3-4 olmalı) • Kapı contası sıkı mı? • Kompresör çalışıyor mu?',
+                        'çamaşır makinesi su almıyor': 'Çamaşır makinesi su almıyorsa: • Musluklar açık mı? • Hortum katlanmış mı? • Su basıncı yeterli mi?',
+                        'fiyat bilgi': 'Fiyatlarımız için bizi arayabilirsiniz: 0543 884 72 84',
+                        'servis talebi': 'Batman Diyar Teknik Beyaz Eşya - 15 yılı aşkın deneyim. 7/24 acil servis. Randevu: 0543 884 72 84'
+                    };
+                    var r = responses[q] || 'Sorunuz için teşekkürler! 0543 884 72 84 arayabilirsiniz.';
+                    var bm = document.createElement('div');
+                    bm.className = 'ai-message bot';
+                    bm.innerHTML = '<p>' + r + '</p>';
+                    msgs.appendChild(bm);
+                    msgs.scrollTop = msgs.scrollHeight;
+                }, 400);
+            }
+            if(inp) setTimeout(function(){inp.focus();}, 200);
+        }
+    </script>
+
+    <!-- AI ASSISTANT -->
+    <button class="ai-float-btn" onclick="document.getElementById('aiModal').classList.add('active'); document.body.style.overflow='hidden'"><span class="ai-pulse"></span>🤖</button>
+    <div class="ai-modal-overlay" id="aiModal">
+        <div class="ai-modal">
+            <div class="ai-modal-header">
+                <h3>🤖 Batman Diyar Teknik Asistan</h3>
+                <button class="ai-modal-close" id="aiModalClose" onclick="document.getElementById('aiModal').classList.remove('active'); document.body.style.overflow=''">×</button>
+            </div>
+            <div class="ai-modal-body">
+                <div class="ai-messages" id="aiMessages">
+                    <div class="ai-message bot">
+                        <p>Merhaba! 👋 Ben Batman Diyar Teknik Beyaz Eşya'nın AI asistanıyım. Klima, kombi ve beyaz eşya ile ilgili sorularınızda size yardımcı olabilirim.</p>
+                    </div>
+                </div>
+                <div class="quick-questions">
+                    <button type="button" onclick="askQuestion('Klima ısıtmıyor')">Klima Arızası</button>
+                    <button type="button" onclick="askQuestion('Klima soğutmuyor')">Klima Soğutmuyor</button>
+                    <button type="button" onclick="askQuestion('Kombi arızası')">Kombi Arızası</button>
+                    <button type="button" onclick="askQuestion('Kombi petek ısınmıyor')">Petek Isınmıyor</button>
+                    <button type="button" onclick="askQuestion('Buzdolabı soğutmuyor')">Buzdolabı</button>
+                    <button type="button" onclick="askQuestion('Çamaşır makinesi su almıyor')">Çamaşır Makinesi</button>
+                    <button type="button" onclick="askQuestion('Fiyat bilgisi')">Fiyat Bilgisi</button>
+                    <button type="button" onclick="askQuestion('Servis talebi')">Servis Talebi</button>
+                </div>
+                <form class="ai-form" id="aiForm">
+                    <input type="text" id="aiInput" placeholder="Mesajınızı yazın..." autocomplete="off">
+                    <button type="submit">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Gizlilik Politikası</h1>
+            <p>Kişisel verilerinizin korunması bizim için önemlidir. Bu sayfada veri işleme politikamız hakkında bilgi bulabilirsiniz.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-section">
+                <h2>1. Veri Toplama</h2>
+                <p>Batman Diyar Teknik Beyaz Eşya olarak, hizmetlerimizi sunabilmek ve müşterilerimizle iletişim kurabilmek için belirli kişisel veriler topluyoruz. Topladığımız veriler şunlardır:</p>
+                <ul>
+                    <li><strong>İletişim Bilgileri:</strong> Ad, soyad, telefon numarası, e-posta adresi</li>
+                    <li><strong>Adres Bilgileri:</strong> Hizmet verilecek adres, semt/ilçe bilgisi</li>
+                    <li><strong>Hizmet Bilgileri:</strong> Arıza türü, cihaz markası, model bilgisi</li>
+                    <li><strong>Teknik Veriler:</strong> IP adresi, tarayıcı bilgileri, erişim zamanları</li>
+                </ul>
+
+                <div class="info-box">
+                    <p><strong>Not:</strong> Sadece Batman ve çevresinde (Kozluk, Beşiri, Gercüş, Hasankeyf, Sason) verdiğimiz teknik servis hizmetleri kapsamında veri topluyoruz.</p>
+                </div>
+
+                <h2>2. Verilerin İşlenme Amaçları</h2>
+                <p>Toplanan kişisel veriler aşağıdaki amaçlarla işlenmektedir:</p>
+                <ul>
+                    <li>Teknik servis randevusu oluşturma ve takip etme</li>
+                    <li>Müşteri hizmetleri ve destek sağlama</li>
+                    <li>Fatura ve ödeme işlemlerini yürütme</li>
+                    <li>Hizmet kalitesini artırmak için geri bildirim toplama</li>
+                    <li>Yasal yükümlülükleri yerine getirme</li>
+                    <li>İletişim kanalları üzerinden bilgilendirme yapma</li>
+                </ul>
+
+                <h2>3. Verilerin Saklanması</h2>
+                <p>Kişisel verileriniz, hizmet süresi boyunca ve Hizmet Sonrası en az 2 yıl süreyle saklanmaktadır. Yasal düzenlemeler gerektirdiğinde bu süre uzatılabilir.</p>
+                <h3>Saklama Süreleri:</h3>
+                <ul>
+                    <li>Müşteri kayıtları: Hizmet sonrası 2 yıl</li>
+                    <li>Fatura bilgileri: 5 yıl (vergisel yükümlülükler)</li>
+                    <li>Teknik bakım kayıtları: 3 yıl</li>
+                    <li>İletişim logları: 1 yıl</li>
+                </ul>
+
+                <h2>4. Çerez Kullanımı</h2>
+                <p>Web sitemizde kullanıcı deneyimini iyileştirmek ve istatistiksel veriler toplamak için çerezler (cookies) kullanıyoruz.</p>
+                <h3>Kullanılan Çerez Türleri:</h3>
+                <ul>
+                    <li><strong>Zorunlu Çerezler:</strong> Site güvenliği ve temel işlevler için gerekli</li>
+                    <li><strong>Performans Çerezleri:</strong> Site performansını ölçmek için anonim veriler</li>
+                    <li><strong>İşlevsellik Çerezleri:</strong> Kullanıcı tercihlerini hatırlamak için</li>
+                </ul>
+                <p>Çerezleri tarayıcı ayarlarınızdan devre dışı bırakabilirsiniz. Ancak bu durumda sitemizin bazı özelliklerini kullanamayabilirsiniz.</p>
+
+                <h2>5. Veri Güvenliği</h2>
+                <p>Kişisel verilerinizin güvenliği bizim için önceliklidir. Aldığımız güvenlik önlemleri:</p>
+                <ul>
+                    <li>SSL şifreleme protokolü ile veri aktarımı</li>
+                    <li>Güvenli sunucu altyapısı</li>
+                    <li>Erişim yetkilendirme ve yetki kontrolü</li>
+                    <li>Düzenli güvenlik güncellemeleri</li>
+                    <li>Personel gizlilik eğitimi</li>
+                </ul>
+
+                <h2>6. Veri Paylaşımı</h2>
+                <p>Kişisel verileriniz, aşağıdaki durumlar dışında üçüncü taraflarla paylaşılmaz:</p>
+                <ul>
+                    <li><strong>Yetkili Servis Ortakları:</strong> Garanti kapsamındaki onarımlar için marka yetkili servisi</li>
+                    <li><strong>Yasal Yükümlülükler:</strong> Mahkeme kararı veya yasal düzenlemeler gerektirdiğinde</li>
+                    <li><strong>Hizmet Sağlayıcıları:</strong> Ödeme işlemleri için banka ve ödeme kuruluşları</li>
+                </ul>
+
+                <h2>7. KVKK Kapsamında Haklarınız</h2>
+                <p>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında aşağıdaki haklara sahipsiniz:</p>
+                <ul>
+                    <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+                    <li>İşlenen kişisel verileri talep etme</li>
+                    <li>Verilerin eksik veya yanlış işlenmesi durumunda düzeltme talep etme</li>
+                    <li>Verilerin silinmesini veya yok edilmesini talep etme</li>
+                    <li>Verilerin yetkisiz işlenmesini engelleme</li>
+                    <li>Verilerin otomatik olarak işlenmesine itiraz etme</li>
+                </ul>
+
+                <div class="contact-box">
+                    <h3>Veri Koruma Talepleriniz İçin</h3>
+                    <p>KVKK kapsamındaki taleplerinizi aşağıdaki iletişim kanallarından iletebilirsiniz:</p>
+                    <ul>
+                        <li><strong>Telefon:</strong> 0543 884 72 84</li>
+                        <li><strong>E-posta:</strong> info@diyarsogutma.com.tr</li>
+                        <li><strong>Adres:</strong> Bağlar Mah. 2030 Sok. No:12, Batman Merkez</li>
+                    </ul>
+                </div>
+
+                <h2>8. İletişim ve Güncellemeler</h2>
+                <p>Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişikliklerde web sitemiz üzerinden sizi bilgilendireceğiz.</p>
+                <p>Herhangi bir sorunuz veya endişeniz varsa bizimle iletişime geçmekten çekinmeyin.</p>
+
+                <div class="info-box">
+                    <p><strong>Son Güncelleme:</strong> Mayıs 2026</p>
+                    <p><strong>Sorumlu Kuruluş:</strong> Batman Diyar Teknik Beyaz Eşya</p>
+                    <p><strong>Batman'da teknik servis</strong> hizmetleri sunan güvenilir çözüm ortağınız.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span>Batman Diyar Teknik Beyaz Eşya</span>
+                    </div>
+                    <p>Batman ve çevresinde 15 yılı aşkın deneyimle klima, kombi ve beyaz eşya teknik servisi hizmeti sunuyoruz.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Servislerimiz</h4>
+                    <ul class="footer-links">
+                        <li><a href="klima-servisi.html">Klima Teknik Servis</a></li>
+                        <li><a href="gaz-dolumu.html">Klima Gaz Dolumu</a></li>
+                        <li><a href="klima-sokme-takma.html">Klima Sökme Takma</a></li>
+                        <li><a href="kombi-servisi.html">Kombi Teknik Servis</a></li>
+                        <li><a href="buzdolabi-servisi.html">Buzdolabı Tamiri</a></li>
+                        <li><a href="camasir-makinesi.html">Çamaşır Makinesi</a></li>
+                        <li><a href="bulasik-makinesi.html">Bulaşık Makinesi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="servisler.html">Servislerimiz</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                        <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+                        <li><a href="hizmet-bolgeleri.html">Hizmet Bölgelerimiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>İletişim</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                            <span>Bağlar Mah. 2030 Sok. No:12<br>Batman Merkez</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                            <a href="tel:+905438847284">0543 884 72 84</a>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            <a href="https://wa.me/905438847284" target="_blank">WhatsApp ile İletişim</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Batman Diyar Teknik – Tüm Hakları Saklıdır</p>
+                <a href="https://www.instagram.com/muratmedyareklam/" target="_blank" rel="noopener" class="designer-link">muratmedyareklam tarafından yapılmıştır</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/905438847284?text=Merhaba,%20Batman%20klima%20servisi%20hakkında%20bilgi%20almak%20istiyorum." class="whatsapp-float" target="_blank" aria-label="WhatsApp ile İletişim">
+        <div class="whatsapp-glow"></div>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
